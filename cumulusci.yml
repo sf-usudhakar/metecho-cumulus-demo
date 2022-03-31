@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.53.0'
+project:
+    name: metecho-cumulus-demo
+    package:
+        name: metecho-cumulus-demo
+        api_version: '52.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/metecho-cumulus-demo/tests
+            options:
+                outputdir: robot/metecho-cumulus-demo/results
+
+    robot_testdoc:
+        options:
+            path: robot/metecho-cumulus-demo/tests
+            output: robot/metecho-cumulus-demo/doc/metecho-cumulus-demo_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
